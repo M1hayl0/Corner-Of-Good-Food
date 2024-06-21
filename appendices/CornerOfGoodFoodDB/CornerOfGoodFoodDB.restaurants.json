@@ -1,0 +1,466 @@
+[{
+  "_id": {
+    "$oid": "664dfaca0f29f703a52ecd89"
+  },
+  "name": "Sakura",
+  "address": "Karadjordjeva 2-4, Beograd",
+  "type": "Japanese",
+  "waiters": [
+    "lana2",
+    "maja2"
+  ],
+  "phone": "060 3654044",
+  "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.06794738153!2d20.445304176676768!3d44.82018037617709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a654df72a34c3%3A0x825b76fbe9aaa71d!2z0KHQsNC60YPRgNCw!5e0!3m2!1ssr!2srs!4v1716483088442!5m2!1ssr!2srs",
+  "canvas": [
+    {
+      "type": "Kitchen",
+      "x": 203,
+      "y": 543,
+      "width": -141,
+      "height": -426
+    },
+    {
+      "type": "Wc",
+      "x": 548,
+      "y": 214,
+      "width": 190,
+      "height": -93
+    },
+    {
+      "type": "Table",
+      "seats": 2,
+      "x": 316,
+      "y": 152,
+      "r": 33.60059523282288,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 2,
+      "x": 444,
+      "y": 148,
+      "r": 33.97057550292606,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 8,
+      "x": 617,
+      "y": 458,
+      "r": 74.33034373659252,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 618,
+      "y": 286,
+      "r": 44.04543109109048,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 454,
+      "y": 283,
+      "r": 41.78516483155236,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 282,
+      "y": 314,
+      "r": 44.91102314577124,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 411,
+      "y": 416,
+      "r": 41.48493702538308,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 282,
+      "y": 489,
+      "r": 38.27531841800928,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    }
+  ],
+  "workingTime": [
+    {
+      "start": "10:00",
+      "end": "23:00"
+    },
+    {
+      "start": "10:00",
+      "end": "23:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "10:00",
+      "end": "23:00"
+    },
+    {
+      "start": "10:00",
+      "end": "23:00"
+    }
+  ],
+  "menu": [
+    {
+      "name": "Sushi",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "dishImageName": "menu_image_Sushi.jpg"
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg"
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg"
+    },
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg"
+    }
+  ],
+  "description": "Experience the essence of Japan at our authentic Japanese restaurant, where traditional flavors meet modern culinary artistry."
+},
+{
+  "_id": {
+    "$oid": "664dfb9f0f29f703a52ecd8b"
+  },
+  "name": "Little Bay",
+  "address": "Dositejeva 9a, Beograd",
+  "type": "European",
+  "waiters": [
+    "pera2"
+  ],
+  "phone": "011 3284163",
+  "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22641.204092995686!2d20.448167123752196!3d44.81849828232255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a65aef2785d41%3A0xba46528a0d6cb663!2sRestoran%20Little%20Bay!5e0!3m2!1ssr!2srs!4v1716483944104!5m2!1ssr!2srs",
+  "canvas": [
+    {
+      "type": "Kitchen",
+      "x": 314,
+      "y": 546,
+      "width": -254,
+      "height": -119
+    },
+    {
+      "type": "Wc",
+      "x": 589,
+      "y": 544,
+      "width": 164,
+      "height": -190
+    },
+    {
+      "type": "Table",
+      "seats": 5,
+      "x": 124,
+      "y": 177,
+      "r": 51.31276644267,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 8,
+      "x": 648,
+      "y": 222,
+      "r": 88.20430828479978,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 319,
+      "y": 212,
+      "r": 49.8196748283246,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 181,
+      "y": 327,
+      "r": 50.21951811795888,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 453,
+      "y": 468,
+      "r": 52.49761899362675,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 360,
+      "y": 338,
+      "r": 48.54894437575342,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 3,
+      "x": 503,
+      "y": 322,
+      "r": 38.897300677553446,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 3,
+      "x": 464,
+      "y": 202,
+      "r": 38.948684188300895,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    }
+  ],
+  "workingTime": [
+    {
+      "start": "14:00",
+      "end": "23:30"
+    },
+    {
+      "start": "14:00",
+      "end": "23:00"
+    },
+    {
+      "start": "14:00",
+      "end": "23:00"
+    },
+    {
+      "start": "14:00",
+      "end": "23:00"
+    },
+    {
+      "start": "14:00",
+      "end": "23:00"
+    },
+    {
+      "start": "14:00",
+      "end": "23:30"
+    },
+    {
+      "start": "14:00",
+      "end": "23:30"
+    }
+  ],
+  "menu": [
+    {
+      "name": "Czech goulash",
+      "priceInEuros": 7,
+      "ingredients": "beef, onions, paprika",
+      "dishImageName": "menu_image_Czech goulash.jpg"
+    }
+  ],
+  "description": "Step into our European restaurant and embark on a culinary journey across the continent. From the robust flavors of Italian pasta to the refined elegance of French cuisine, our menu showcases the best of Europe’s diverse culinary traditions."
+},
+{
+  "_id": {
+    "$oid": "664e07c90f29f703a52ecd93"
+  },
+  "name": "Vang Fu",
+  "address": "Jurija Gagarina 26v, Beograd",
+  "type": "Chinese",
+  "waiters": [
+    "zika2"
+  ],
+  "phone": "011 2285060",
+  "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.8322375252624!2d20.39213727667625!3d44.80460747720478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a6f9c5bd54bc1%3A0x2bd72b30d4ca6bd9!2z0JrQuNC90LXRgdC60Lgg0YDQtdGB0YLQvtGA0LDQvSDQktCw0L3QsyDQpNGD!5e0!3m2!1ssr!2srs!4v1716484003024!5m2!1ssr!2srs",
+  "canvas": [
+    {
+      "type": "Kitchen",
+      "x": 441,
+      "y": 409,
+      "width": -230,
+      "height": -199
+    },
+    {
+      "type": "Wc",
+      "x": 605,
+      "y": 376,
+      "width": -128,
+      "height": -126
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 107,
+      "y": 149,
+      "r": 36.124783736376884,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 103,
+      "y": 300,
+      "r": 37.44329045369811,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 106,
+      "y": 442,
+      "r": 43.266615305567875,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 259,
+      "y": 477,
+      "r": 45.45327270945405,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 408,
+      "y": 472,
+      "r": 43.01162633521314,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 558,
+      "y": 475,
+      "r": 41.14608122288197,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 670,
+      "y": 429,
+      "r": 37.48332962798263,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 672,
+      "y": 276,
+      "r": 40.80441152620633,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 643,
+      "y": 152,
+      "r": 36.796738985948195,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 465,
+      "y": 145,
+      "r": 34.438350715445125,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    },
+    {
+      "type": "Table",
+      "seats": 4,
+      "x": 289,
+      "y": 148,
+      "r": 35.608987629529715,
+      "sAngle": 0,
+      "eAngle": 6.283185307179586
+    }
+  ],
+  "workingTime": [
+    {
+      "start": "12:00",
+      "end": "23:00"
+    },
+    {
+      "start": "12:00",
+      "end": "23:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "12:00",
+      "end": "22:00"
+    },
+    {
+      "start": "12:00",
+      "end": "23:00"
+    },
+    {
+      "start": "12:00",
+      "end": "23:00"
+    }
+  ],
+  "menu": [
+    {
+      "name": "Kung Pao Chicken",
+      "dishImageName": "menu_image_Kung Pao Chicken.jpg",
+      "priceInEuros": 9,
+      "ingredients": "chicken breast, dried red chilies, peanuts"
+    }
+  ],
+  "description": "Discover the perfect blend of tradition and modernity at Vang Fu. Located in the heart of the city, we offer an inviting atmosphere with classic Chinese decor."
+}]

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Corner of Good Food</h2>
+        <div class="mb-3">
+            <p class="h5">Total number of restaurants: {{totalRestaurants}}</p>
+            <p class="h5">Total number of guests: {{totalGuests}}</p>
+        </div>
+        <table>
+            <tr>
+                <th (click)="sortRestaurants('name')">Restaurant</th>
+                <th (click)="sortRestaurants('address')">Address</th>
+                <th (click)="sortRestaurants('type')">Type</th>
+                <th>Waiters</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" id="name" [(ngModel)]="nameSearch" name="nameSearch" (change)="search()" placeholder="Search by name"></td>
+                <td><input type="text" class="form-control" id="address" [(ngModel)]="addressSearch" name="addressSearch" (change)="search()" placeholder="Search by address"></td>
+                <td><input type="text" class="form-control" id="type" [(ngModel)]="typeSearch" name="typeSearch" (change)="search()" placeholder="Search by type"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr *ngFor="let restaurant of restaurants">
+                <td><a class="link" (click)="navigateToRestaurant(restaurant)">{{restaurant.name}}</a></td>
+                <td>{{restaurant.address}}</td>
+                <td>{{restaurant.type}}</td>
+                <td>{{restaurant.waitersNamesString}}</td>
+                <td>
+                    <div *ngIf="restaurant.numOfRatings > 0">
+                      {{restaurant.averageRating | number:'1.2-2'}}
+                      <span class="rating">
+                          <span *ngFor="let i of stars"
+                              class="star"
+                              [class.filled]="i <= restaurant.averageRating"
+                              [class.half-filled]="isHalfFilled(i, restaurant.averageRating)">&#9733;</span>
+                      </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    Number of reservations in last 24 hours
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ last24Hours }}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    Number of reservations in last 7 days
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ last7Days }}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center">
+                  <div class="card-header">
+                    Number of reservations in last month
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ lastMonth }}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <hr/>
+    </div>
+</body>
+</html>

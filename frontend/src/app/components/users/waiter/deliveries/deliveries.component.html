@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Current Deliveries</h2><br/>
+        <table>
+            <tr>
+                <th>Guest</th>
+                <th>Restaurant</th>
+                <th>Order status</th>
+                <th>Estimated time</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let order of waiterAllOrders">
+                <td>{{order.guest}}</td>
+                <td>{{order.restaurantName}}</td>
+                <td>{{order.status}}</td>
+                <td>
+                    <select id="estimatedTime" name="estimatedTime" [(ngModel)]="order.estimatedTime" class="custom-select">
+                        <option value="20-30 min">20-30 min</option>
+                        <option value="30-40 min">30-40 min</option>
+                        <option value="50-60 min">50-60 min</option>
+                    </select>
+                </td>
+                <td><div class="button-container"><button class="reject" (click)="reject(order)">Reject</button></div></td>
+                <td><div class="button-container"><button class="accept" (click)="accept(order)">Accept</button></div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

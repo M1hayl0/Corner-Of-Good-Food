@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Profile</h2>
+        <img [src]="profileImageUrl" class="profile-img"/>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName" required>
+                    <span class="text-danger">{{firstNameMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName" required>
+                    <span class="text-danger">{{lastNameMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" [(ngModel)]="user.address" name="address" required>
+                    <span class="text-danger">{{addressMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required>
+                    <span class="text-danger">{{phoneMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required>
+                    <span class="text-danger">{{emailMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="creditCard">Credit Card Number:</label>
+                    <input type="text" class="form-control" id="creditCard" [(ngModel)]="user.creditCard" name="creditCard" required>
+                    <span class="text-danger">{{creditCardMessage}}</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="profileImage" class="col-auto col-form-label">Profile Image:</label>
+                <div class="col-auto">
+                  <input type="file" class="form-control" id="profileImage" accept=".jpg,.png" name="profileImage" (change)="profileImageProcess($event)">
+                </div>
+                <span class="col-auto text-danger">{{profileImageMessage}}</span>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="changeProfile()">Change Profile</button>
+        </form>
+        <hr>
+        <a href="http://localhost:4200{{basePath}}/passwordChange" class="text-center">Do you want to change password?</a>
+    </div>
+</body>
+</html>

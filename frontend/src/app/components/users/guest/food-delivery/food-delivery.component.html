@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Current Orders</h2><br/>
+        <table>
+            <tr>
+                <th>Restaurant</th>
+                <th>Order status</th>
+                <th>Estimated time</th>
+            </tr>
+            <tr *ngFor="let order of currentOrders">
+                <td>{{order.restaurantName}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.estimatedTime}}</td>
+            </tr>
+        </table>
+        <hr/>
+
+        <h2>Out of Date Orders</h2><br/>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Total price</th>
+                <th>Restaurant</th>
+            </tr>
+            <tr *ngFor="let order of outOfDateOrders">
+                <td>{{order.date | date:'MM/dd/yyyy' }}</td>
+                <td>{{order.totalPrice}}</td>
+                <td>{{order.restaurantName}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

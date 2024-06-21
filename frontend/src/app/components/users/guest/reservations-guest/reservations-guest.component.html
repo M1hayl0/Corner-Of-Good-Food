@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Current Reservations</h2><br/>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Restaurant</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let reservation of currentReservations">
+                <td>{{reservation.date | date:'MM/dd/yyyy, h:mm a'}}</td>
+                <td>{{reservation.restaurantName}}</td>
+                <td>{{reservation.restaurantAddress}}</td>
+                <td><div class="button-container"><button [disabled]="!dateMoreThan45MinutesAgo(reservation.date)" class="btn btn-primary" (click)="cancelReservation(reservation)">Cancel</button></div></td>
+            </tr>
+        </table>
+        <hr/>
+
+        <h2>Out of Date Reservations</h2><br/>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Restaurant</th>
+                <th>Comment</th>
+                <th>Rating</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let reservation of outOfDateReservations">
+                <td>{{reservation.date | date:'MM/dd/yyyy, h:mm a'}}</td>
+                <td>{{reservation.restaurantName}}</td>
+                <td class="comment">
+                    <div *ngIf="reservation.comment === undefined"><input type="text" class="form-control" id="comment" [(ngModel)]="reservation.comment2" name="comment"/></div>
+                    <div *ngIf="reservation.comment !== undefined">{{reservation.comment}}</div>
+                </td>
+                <td>
+                    <div *ngIf="reservation.rating === undefined">
+                        {{reservation.rating2}}
+                        <span class="rating">
+                            <span *ngFor="let i of stars"
+                                (click)="setRating(i, reservation)"
+                                class="star pointer"
+                                [class.filled]="i <= reservation.rating2">&#9733;</span>
+                        </span>
+                    </div>
+                    <div *ngIf="reservation.rating !== undefined">
+                        {{reservation.rating}}
+                        <span class="rating">
+                            <span *ngFor="let i of stars"
+                                class="star"
+                                [class.filled]="i <= reservation.rating">&#9733;</span>
+                        </span>
+                    </div>
+                </td>
+                <td><div class="button-container"><button [disabled]="reservation.comment !== undefined && reservation.rating !== undefined" class="btn btn-primary" (click)="rate(reservation)">Rate</button></div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

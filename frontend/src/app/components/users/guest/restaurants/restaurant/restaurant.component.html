@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-t">
+        <div class="card-body">
+            <h2 class="card-title">{{ restaurant.name }}</h2>
+            <p class="card-text">{{ restaurant.description }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ restaurant.address }}</p>
+            <p class="card-text"><strong>Type:</strong> {{ restaurant.type }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ restaurant.phone }}</p>
+            <p class="card-text"><strong>Waiters:</strong> {{ restaurant.waitersNamesString }}</p>
+
+            <h3 class="mt-5">Working hours:</h3>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Monday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[1].start}} - {{restaurant.workingTime[1].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Tuesday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[2].start}} - {{restaurant.workingTime[2].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Wednesday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[3].start}} - {{restaurant.workingTime[3].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Thursday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[4].start}} - {{restaurant.workingTime[4].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Friday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[5].start}} - {{restaurant.workingTime[5].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Saturday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[6].start}} - {{restaurant.workingTime[6].end}}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-3 font-weight-bold">Sunday</div>
+                <div class="col-sm-9">{{restaurant.workingTime[0].start}} - {{restaurant.workingTime[0].end}}</div>
+            </div>
+
+            <h3 class="mt-5">Comments:</h3>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let comment of restaurant.comments" class="list-group-item">{{comment}}</li>
+            </ul>
+        </div>
+        <div class="iframe-container">
+            <iframe [src]="sanitizeUrl(restaurant.map)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <hr/>
+
+        <form *ngIf="reservationWay">
+            <div class="card-body text-center">
+                <h2 class="card-title ">Reservation</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="reservationDate" class="form-label labelBold">Select date for your reservation:</label>
+                        <input type="date" id="reservationDate" class="form-control" name="reservationDate" (change)="initReservedTables()" [(ngModel)]="reservationDateStr">
+                        <span class="text-danger">{{dateMessage}}</span>
+                    </div>
+                </div><br/>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="reservationTime" class="form-label labelBold">Select time for your reservation:</label>
+                        <input type="time" id="reservationTime" class="form-control" name="reservationTime" (change)="initReservedTables()" [(ngModel)]="reservationTimeStr">
+                        <span class="text-danger">{{timeMessage}}</span>
+                    </div>
+                </div><br/>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="guestsNumber" class="form-label labelBold">Enter number of seats:</label>
+                        <input type="number" min="1" id="guestsNumber" class="form-control" name="guestsNumber" [(ngModel)]="reservation.seats">
+                        <span class="text-danger">{{seatsMessage}}</span>
+                    </div>
+                </div><br/>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="reservationDescription" class="form-label labelBold">Additional requirements:</label>
+                        <textarea id="reservationDescription" name="reservationDescription" class="form-control" [(ngModel)]="reservation.description" rows="3"></textarea>
+                    </div>
+                </div><br/>
+                <button class="btn btn-primary" (click)="changeReservationWay()">Other way to make reservation</button>
+                <button type="submit" class="btn btn-primary" (click)="reservation1()">Make a reservation</button>
+            </div>
+        </form>
+        <form *ngIf="!reservationWay">
+            <div class="card-body text-center">
+                <h2 class="card-title">Reservation</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="reservationDate" class="form-label labelBold">Select date for your reservation:</label>
+                        <input type="date" id="reservationDate" class="form-control" name="reservationDate" (change)="drawDate()" [(ngModel)]="reservationDateStr">
+                        <span class="text-danger">{{dateMessage}}</span>
+                    </div>
+                </div><br/>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="reservationTime" class="form-label labelBold">Select time for your reservation:</label>
+                        <input type="time" id="reservationTime" class="form-control" name="reservationTime" (change)="drawDate()" [(ngModel)]="reservationTimeStr">
+                        <span class="text-danger">{{timeMessage}}</span>
+                    </div>
+                </div><br/>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <label for="numberOfSeats" class="form-label labelBold">Enter number of seats:</label>
+                        <input type="number" min="1" id="numberOfSeats" class="form-control" name="numberOfSeats" [(ngModel)]="reservation.seats">
+                        <span class="text-danger">{{seatsMessage}}</span>
+                    </div>
+                </div><br/>  
+                <div class="canvas-container">
+                    <canvas #canvas width="800" height="600"></canvas>
+                </div><br/> 
+                <span class="text-danger">{{canvasMessage}}</span><br/><br/>
+                <button class="btn btn-primary" (click)="changeReservationWay()">Other way to make reservation</button>
+                <button type="submit" class="btn btn-primary" (click)="reservation2()">Make a reservation</button>
+            </div>
+        </form>
+        <hr/>
+
+        <div class="menu">
+            <div class="menu-item" *ngFor="let dish of restaurant.menu">
+                <img [src]="'http://localhost:4000/' + dish.dishImageName" alt="Dish Image">
+                <h3>{{dish.name}}</h3>
+                <p>{{dish.priceInEuros}}&#8364;</p>
+                <p>Ingredients: {{dish.ingredients}}</p>
+                <input type="number" min="1" id="numberOfDishesToAdd" class="form-control" name="numberOfDishesToAdd" [(ngModel)]="dish.numberOfDishesToAdd">
+                <button class="addToCart-button" (click)="addToCart(dish)">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <div *ngIf="cart.length === 0">Your cart is empty</div>
+            <div *ngFor="let dish of cart">
+                <div class="cart-item">
+                    <img [src]="'http://localhost:4000/' + dish.dishImageName" alt="Dish Image">
+                    <div class="cart-item-details">
+                        <h4>{{dish.name}}</h4>
+                        <span>{{dish.priceInEuros}}&#8364; x </span>
+                        <div class="quantity-controls">
+                            <button class="quantity-button" (click)="changeQuantity(dish, -1)">-</button>
+                            <span>{{dish.numberOfDishes}}</span>
+                            <button class="quantity-button" (click)="changeQuantity(dish, 1)">+</button>
+                        </div>
+                        <button class="remove-button" (click)="removeFromCart(dish)">Remove</button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="cart.length > 0">
+                <h3>Total: {{ totalPrice }}&#8364;</h3>
+                <button class="order-button" (click)="order()">Order</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

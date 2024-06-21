@@ -1,0 +1,484 @@
+[{
+  "_id": {
+    "$oid": "6658b470be67d77ed2aeb964"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "pictureName": "menu_image_Sakura - Teriyaki Chicken.jpg",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "numberOfDishes": 6
+    },
+    {
+      "name": "Tempura",
+      "pictureName": "menu_image_Sakura - Tempura.jpg",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "numberOfDishes": 6
+    },
+    {
+      "name": "Sushi",
+      "pictureName": "menu_image_Sakura - Sushi.jpg",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "numberOfDishes": 4
+    }
+  ],
+  "totalPrice": 148,
+  "status": "accepted",
+  "estimatedTime": "30-40 min",
+  "date": {
+    "$date": "2024-05-30T16:59:44.186Z"
+  },
+  "dateAcceptReject": {
+    "$date": "2024-05-30T17:01:40.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6658b4c1be67d77ed2aeb966"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "pictureName": "menu_image_Sakura - Teriyaki Chicken.jpg",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "numberOfDishes": 4
+    },
+    {
+      "name": "Tempura",
+      "pictureName": "menu_image_Sakura - Tempura.jpg",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "numberOfDishes": 6
+    },
+    {
+      "name": "Ramen",
+      "pictureName": "menu_image_Sakura - Ramen.jpg",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 110,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-05-30T18:21:42.186Z"
+  },
+  "estimatedTime": "30-40 min",
+  "dateAcceptReject": {
+    "$date": "2024-05-30T18:23:40.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6658b4f4be67d77ed2aeb96d"
+  },
+  "guest": "zika",
+  "restaurantName": "Little Bay",
+  "restaurantAddress": "Dositejeva 9a, Beograd",
+  "cart": [
+    {
+      "name": "Czech goulash",
+      "pictureName": "menu_image_Little Bay - Czech goulash.jpg",
+      "priceInEuros": 7,
+      "ingredients": "beef, onions, paprika",
+      "numberOfDishes": 5
+    }
+  ],
+  "totalPrice": 35,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-05-30T16:59:44.186Z"
+  },
+  "estimatedTime": "20-30 min",
+  "dateAcceptReject": {
+    "$date": "2024-05-30T17:05:42.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6658be90bd87164290a01be7"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "pictureName": "menu_image_Sakura - Teriyaki Chicken.jpg",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Ramen",
+      "pictureName": "menu_image_Sakura - Ramen.jpg",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "numberOfDishes": 5
+    }
+  ],
+  "totalPrice": 73,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-05-30T17:59:44.186Z"
+  },
+  "estimatedTime": "30-40 min",
+  "dateAcceptReject": {
+    "$date": "2024-05-30T18:05:12.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "665c9938c079acfc4515044b"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Sushi",
+      "pictureName": "menu_image_Sakura - Sushi.jpg",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "numberOfDishes": 6
+    },
+    {
+      "name": "Ramen",
+      "pictureName": "menu_image_Sakura - Ramen.jpg",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 84,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-02T16:09:28.050Z"
+  },
+  "estimatedTime": "30-40 min",
+  "dateAcceptReject": {
+    "$date": "2024-06-02T16:25:42.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "666eccbcaaf7adc3b57bd5fd"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Sushi",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "dishImageName": "menu_image_Sushi.jpg",
+      "numberOfDishes": 4
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 2
+    },
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 5
+    }
+  ],
+  "totalPrice": 111,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-16T11:30:04.117Z"
+  },
+  "estimatedTime": "20-30 min",
+  "dateAcceptReject": {
+    "$date": "2024-06-16T12:05:42.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "666ee1deaaf7adc3b57bd6d1"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 116,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-16T13:00:14.158Z"
+  },
+  "estimatedTime": "30-40 min",
+  "dateAcceptReject": {
+    "$date": "2024-06-16T13:15:42.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "666ee1e2aaf7adc3b57bd6d3"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 76,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-16T13:00:18.459Z"
+  },
+  "estimatedTime": "50-60 min",
+  "dateAcceptReject": {
+    "$date": "2024-06-16T13:05:42.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "666ee1e7aaf7adc3b57bd6d5"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 100,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-16T13:00:23.826Z"
+  },
+  "dateAcceptReject": {
+    "$date": "2024-06-21T20:23:33.921Z"
+  },
+  "estimatedTime": "20-30 min"
+},
+{
+  "_id": {
+    "$oid": "6675e07f64db86383ad47c52"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 4
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Sushi",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "dishImageName": "menu_image_Sushi.jpg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 116,
+  "status": "accepted",
+  "date": {
+    "$date": "2024-06-21T20:20:15.011Z"
+  },
+  "dateAcceptReject": {
+    "$date": "2024-06-21T20:23:36.080Z"
+  },
+  "estimatedTime": "30-40 min"
+},
+{
+  "_id": {
+    "$oid": "6675e08464db86383ad47c54"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 5
+    }
+  ],
+  "totalPrice": 73,
+  "status": "rejected",
+  "date": {
+    "$date": "2024-06-21T20:20:20.494Z"
+  },
+  "dateAcceptReject": {
+    "$date": "2024-06-21T20:23:37.427Z"
+  },
+  "estimatedTime": ""
+},
+{
+  "_id": {
+    "$oid": "6675e08d64db86383ad47c56"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 4
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Sushi",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "dishImageName": "menu_image_Sushi.jpg",
+      "numberOfDishes": 3
+    }
+  ],
+  "totalPrice": 114,
+  "status": "waiting",
+  "date": {
+    "$date": "2024-06-21T20:20:29.575Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6675e09164db86383ad47c58"
+  },
+  "guest": "zika",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd",
+  "cart": [
+    {
+      "name": "Teriyaki Chicken",
+      "priceInEuros": 11,
+      "ingredients": "chicken, mirin, sugar, sake",
+      "dishImageName": "menu_image_Teriyaki Chicken.jpg",
+      "numberOfDishes": 4
+    },
+    {
+      "name": "Ramen",
+      "priceInEuros": 8,
+      "ingredients": "wheat noodles, broth, sliced pork belly or chicken, boiled egg",
+      "dishImageName": "menu_image_Ramen.jpg",
+      "numberOfDishes": 5
+    },
+    {
+      "name": "Sushi",
+      "priceInEuros": 10,
+      "ingredients": "rice, raw fish, vegetables",
+      "dishImageName": "menu_image_Sushi.jpg",
+      "numberOfDishes": 3
+    },
+    {
+      "name": "Tempura",
+      "priceInEuros": 7,
+      "ingredients": "seafood, vegetables",
+      "dishImageName": "menu_image_Tempura.jpg",
+      "numberOfDishes": 2
+    }
+  ],
+  "totalPrice": 128,
+  "status": "waiting",
+  "date": {
+    "$date": "2024-06-21T20:20:33.053Z"
+  }
+}]

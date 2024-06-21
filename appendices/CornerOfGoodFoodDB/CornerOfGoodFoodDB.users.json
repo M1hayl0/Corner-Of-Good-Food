@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "664a537a2d289fa4ca8e7630"
+  },
+  "username": "lana",
+  "password": "65776dda39dbd0e2a0c5c1321a379d85be4810b899789b04298949d6978ffc48",
+  "firstName": "Lana",
+  "lastName": "Peric",
+  "type": "guest",
+  "securityQuestion": "What's your favorite food?",
+  "securityAnswer": "Pizza",
+  "gender": "F",
+  "address": "Kneza Milosa 52, Beograd",
+  "phone": "063 5135486",
+  "email": "anaperic@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6123 5498 7654 2154",
+  "status": "active",
+  "didntAppearTimes": 0
+},
+{
+  "_id": {
+    "$oid": "664dcf280f29f703a52ecd82"
+  },
+  "username": "zika",
+  "password": "20e5713fd46a5a8c3d8098343537a1a68c587f1cd30600179a4cf7433e49ccb8",
+  "firstName": "Zivojin",
+  "lastName": "Misic",
+  "type": "guest",
+  "securityQuestion": "What's your dog's name?",
+  "securityAnswer": "Dzeki",
+  "gender": "M",
+  "address": "Nikole Tesle 32, Beograd",
+  "phone": "065 6123546",
+  "email": "zikam@gmail.com",
+  "profileImageName": "profile_image_zivojin_misic.png",
+  "creditCard": "6135 3215 6483 4512",
+  "status": "active",
+  "didntAppearTimes": 1
+},
+{
+  "_id": {
+    "$oid": "664defa30f29f703a52ecd84"
+  },
+  "username": "lana2",
+  "password": "65776dda39dbd0e2a0c5c1321a379d85be4810b899789b04298949d6978ffc48",
+  "firstName": "Lana",
+  "lastName": "Markovic",
+  "type": "waiter",
+  "securityQuestion": "What's your favorite color?",
+  "securityAnswer": "Blue",
+  "gender": "F",
+  "address": "Bulevar Kralja Aleksandra 142, Beograd",
+  "phone": "060 1354845",
+  "email": "anamar@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6153 6518 9486 5132",
+  "status": "active",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd"
+},
+{
+  "_id": {
+    "$oid": "664e08c90f29f703a52ecd96"
+  },
+  "username": "zika2",
+  "password": "20e5713fd46a5a8c3d8098343537a1a68c587f1cd30600179a4cf7433e49ccb8",
+  "firstName": "Zivojin",
+  "lastName": "Jovanovic",
+  "type": "waiter",
+  "securityQuestion": "What's your favourite animal?",
+  "securityAnswer": "Dog",
+  "gender": "M",
+  "address": "Resavska 32, Beograd",
+  "phone": "061 3515654",
+  "email": "zikaj@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6184 3156 3518 4896",
+  "status": "active",
+  "restaurantName": "Vang Fu",
+  "restaurantAddress": "Jurija Gagarina 26v, Beograd"
+},
+{
+  "_id": {
+    "$oid": "664e3dd667ca1a31f86f76d4"
+  },
+  "username": "pera",
+  "password": "1c9db7c914c808ba829e7c69d4f064e539d036f932edc36311cc4e30911d1448",
+  "firstName": "Petar",
+  "lastName": "Petrovic",
+  "type": "guest",
+  "securityQuestion": "What's your mother's name?",
+  "securityAnswer": "Svetlana",
+  "gender": "M",
+  "address": "Resavska 23, Beograd",
+  "phone": "061 6451245",
+  "email": "pera@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6153 1235 4867 9456",
+  "status": "active",
+  "didntAppearTimes": 0
+},
+{
+  "_id": {
+    "$oid": "665a12c3ad390bb2d7901ff0"
+  },
+  "username": "zikaAdmin",
+  "password": "20e5713fd46a5a8c3d8098343537a1a68c587f1cd30600179a4cf7433e49ccb8",
+  "firstName": "Zika",
+  "lastName": "Markovic",
+  "type": "admin",
+  "status": "active"
+},
+{
+  "_id": {
+    "$oid": "665a2d026d807db465f63d8a"
+  },
+  "username": "pera2",
+  "password": "1c9db7c914c808ba829e7c69d4f064e539d036f932edc36311cc4e30911d1448",
+  "firstName": "Petar",
+  "lastName": "Milutinovic",
+  "type": "waiter",
+  "securityQuestion": "What's your father's name?",
+  "securityAnswer": "Milan",
+  "gender": "M",
+  "address": "Bulevar Kralja Aleksandra 111, Beograd",
+  "phone": "061 6152351",
+  "email": "perapera@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6513 6513 6516 5642",
+  "status": "active",
+  "restaurantName": "Little Bay",
+  "restaurantAddress": "Dositejeva 9a, Beograd"
+},
+{
+  "_id": {
+    "$oid": "6669cb4d7ff5e2870627515e"
+  },
+  "username": "mika2",
+  "password": "398e7658a590d80035f9bbaab539673482990837ffa5fd3848718bc28a197421",
+  "firstName": "Milan",
+  "lastName": "Mitrovic",
+  "type": "waiter",
+  "securityQuestion": "What is your dog's name?",
+  "securityAnswer": "Max",
+  "gender": "M",
+  "address": "Kraljice Natalije 14",
+  "phone": "063 51 65 849",
+  "email": "mika@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6135 3159 6845 6812",
+  "status": "active",
+  "restaurantName": "",
+  "restaurantAddress": ""
+},
+{
+  "_id": {
+    "$oid": "666b02b868201b0ae4e38ee2"
+  },
+  "username": "maja2",
+  "password": "3fbea76c3f28cfb4cd92c9faef93c5d6111b3a122a22f0398882b9c0c5308453",
+  "firstName": "Maja",
+  "lastName": "Filipovic",
+  "type": "waiter",
+  "securityQuestion": "What's your favorite food?",
+  "securityAnswer": "Sushi",
+  "gender": "F",
+  "address": "Takovska 12",
+  "phone": "062 65 31 564",
+  "email": "maja@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6135 4865 9486 5124",
+  "status": "active",
+  "restaurantName": "Sakura",
+  "restaurantAddress": "Karadjordjeva 2-4, Beograd"
+},
+{
+  "_id": {
+    "$oid": "666ec58faaf7adc3b57bd58d"
+  },
+  "username": "mika",
+  "password": "398e7658a590d80035f9bbaab539673482990837ffa5fd3848718bc28a197421",
+  "firstName": "Milan",
+  "lastName": "Milosevic",
+  "type": "guest",
+  "securityQuestion": "What's your father's name?",
+  "securityAnswer": "Dusan",
+  "gender": "M",
+  "address": "Jurija Gagarina 42, Beograd",
+  "phone": "062 61 34 516",
+  "email": "mikam@gmail.com",
+  "profileImageName": "",
+  "creditCard": "3150 2156 4568 3512",
+  "status": "inactive",
+  "didntAppearTimes": 0
+},
+{
+  "_id": {
+    "$oid": "666efea329d8931c39fab9b0"
+  },
+  "username": "maja",
+  "password": "3fbea76c3f28cfb4cd92c9faef93c5d6111b3a122a22f0398882b9c0c5308453",
+  "firstName": "Maja",
+  "lastName": "Miljkovic",
+  "type": "guest",
+  "securityQuestion": "What's your favorite food?",
+  "securityAnswer": "Ice cream",
+  "gender": "M",
+  "address": "Bulevar Mihajla Pupina",
+  "phone": "061 35 12 546",
+  "email": "majamaja@gmail.com",
+  "profileImageName": "",
+  "creditCard": "6135 1235 4865 4685",
+  "status": "inactive",
+  "didntAppearTimes": 0
+}]

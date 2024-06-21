@@ -1,0 +1,9 @@
+frontend:
+npm install chart.js
+npm install bootstrap
+ 
+backend:
+npm install multer
+npm install --save-dev @types/multer
+npm install crypto-js
+npm install --save-dev @types/crypto-js 

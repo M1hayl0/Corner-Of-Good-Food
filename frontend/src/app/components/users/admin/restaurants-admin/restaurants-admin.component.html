@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container container1 mt-5">
+        <h2>Restaurants</h2>
+        <table>
+            <tr>
+                <th (click)="sortRestaurants('name')">Restaurant</th>
+                <th (click)="sortRestaurants('address')">Address</th>
+                <th (click)="sortRestaurants('type')">Type</th>
+                <th>Waiters</th>
+                <th>Rating</th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" id="name" [(ngModel)]="nameSearch" name="nameSearch" (change)="search()" placeholder="Search by name"></td>
+                <td><input type="text" class="form-control" id="address" [(ngModel)]="addressSearch" name="addressSearch" (change)="search()" placeholder="Search by address"></td>
+                <td><input type="text" class="form-control" id="type" [(ngModel)]="typeSearch" name="typeSearch" (change)="search()" placeholder="Search by type"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr *ngFor="let restaurant of restaurants">
+                <td>{{restaurant.name}}</td>
+                <td>{{restaurant.address}}</td>
+                <td>{{restaurant.type}}</td>
+                <td>{{restaurant.waitersNamesString}}</td>
+                <td width="160px">
+                    <div *ngIf="restaurant.numOfRatings > 0">
+                      {{restaurant.averageRating | number:'1.2-2'}}
+                      <span class="rating">
+                          <span *ngFor="let i of stars"
+                              class="star"
+                              [class.filled]="i <= restaurant.averageRating"
+                              [class.half-filled]="isHalfFilled(i, restaurant.averageRating)">&#9733;</span>
+                      </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+
+        <h3>Add new restaurant</h3>
+        <div class="container container2 mt-5">
+            <form>
+                <div class="form-group row">
+                    <label for="name" class="col-sm-4 col-form-label labelBold">Enter restaurant name:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="name" [(ngModel)]="newRestaurant.name" name="name" (change)="drawRestaurantName()" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="address" class="col-sm-4 col-form-label labelBold">Enter restaurant address:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="address" [(ngModel)]="newRestaurant.address" name="address" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="type" class="col-sm-4 col-form-label labelBold">Enter restaurant type:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="type" [(ngModel)]="newRestaurant.type" name="type" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-sm-4 col-form-label labelBold">Enter description:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="description" [(ngModel)]="newRestaurant.description" name="description" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-4 col-form-label labelBold">Enter restaurant phone:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="phone" [(ngModel)]="newRestaurant.phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="map" class="col-sm-4 col-form-label labelBold">Enter google maps link:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="map" [(ngModel)]="newRestaurant.map" name="map" required>
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label for="mondayStart" class="col-sm-4 col-form-label labelBold">Monday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="mondayStart"  [(ngModel)]="newRestaurant.workingTime[1].start" name="mondayStart">
+                            <label class="mr-2">End:</label>
+                            <input type="time" class="form-control form-control-inline" id="mondayEnd"  [(ngModel)]="newRestaurant.workingTime[1].end" name="mondayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tuesdayStart" class="col-sm-4 col-form-label labelBold">Tuesday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="tuesdayStart" [(ngModel)]="newRestaurant.workingTime[2].start" name="tuesdayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="tuesdayEnd" [(ngModel)]="newRestaurant.workingTime[2].end" name="tuesdayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="wednesdayStart" class="col-sm-4 col-form-label labelBold">Wednesday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="wednesdayStart" [(ngModel)]="newRestaurant.workingTime[3].start" name="wednesdayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="wednesdayEnd" [(ngModel)]="newRestaurant.workingTime[3].end" name="wednesdayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="thursdayStart" class="col-sm-4 col-form-label labelBold">Thursday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="thursdayStart" [(ngModel)]="newRestaurant.workingTime[4].start" name="thursdayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="thursdayEnd" [(ngModel)]="newRestaurant.workingTime[4].end" name="thursdayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="fridayStart" class="col-sm-4 col-form-label labelBold">Friday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="fridayStart" [(ngModel)]="newRestaurant.workingTime[5].start" name="fridayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="fridayEnd" [(ngModel)]="newRestaurant.workingTime[5].end" name="fridayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="saturdayStart" class="col-sm-4 col-form-label labelBold">Saturday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="saturdayStart" [(ngModel)]="newRestaurant.workingTime[6].start" name="saturdayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="saturdayEnd" [(ngModel)]="newRestaurant.workingTime[6].end" name="saturdayEnd">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="sundayStart" class="col-sm-4 col-form-label labelBold">Sunday:</label>
+                    <div class="col-sm-8">
+                        <div class="form-inline">
+                            <label class="mr-2">Start:</label> 
+                            <input type="time" class="form-control form-control-inline mr-3" id="sundayStart" [(ngModel)]="newRestaurant.workingTime[0].start" name="sundayStart">
+                            <label class="mr-2">End:</label> 
+                            <input type="time" class="form-control form-control-inline" id="sundayEnd" [(ngModel)]="newRestaurant.workingTime[0].end" name="sundayEnd">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
+        <div class="container container3">
+            <section class="tools-board">
+                <div class="row">
+                    <ul class="options">
+                        <li class="option active" #kitchen>
+                            <img src="../../../../assets/icons/rectangle.svg" alt="">
+                            <span>Kitchen</span>
+                        </li>
+                        <li class="option" #wc>
+                            <img src="../../../../assets/icons/rectangle.svg" alt="">
+                            <span>WC</span>
+                        </li>
+                        <li class="option" #table>
+                            <img src="../../../../assets/icons/circle.svg" alt="">
+                            <span>Table</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <label for="seats">Enter number of seats:</label>
+                    <input type="number" min="0" default="4" class="form-control" id="seats" [(ngModel)]="seats" name="seats" required>
+                </div>
+                <div class="row">
+                    <label for="jsonFile">Or you can choose JSON file with canvas data:</label>
+                    <input type="file" class="form-control" id="jsonFile" (change)="onFileSelected($event)" accept=".json">
+                </div>
+                <div class="row buttons">
+                    <button class="clear-canvas" #clear>Clear Canvas</button>
+                    <button class="save-restaurant" (click)="saveRestaurant()">Save Restaurant</button>
+                    <span class="text-danger">{{message}}</span>
+                </div>
+            </section>
+            <section class="drawing-board">
+                <canvas #canvas></canvas>
+            </section>
+        </div>
+        <hr/>
+
+
+        <h3>Add new dish</h3>
+        <div class="form-group row">
+            <label for="restaurantForDish" class="col-sm-4 col-form-label labelBold">Choose restaurant:</label>
+            <div class="col-sm-8">
+                <select id="restaurantForDish" name="restaurantForDish" [(ngModel)]="restaurantForDish" class="custom-select select">
+                    <ng-container *ngFor="let restaurant of allRestaurants">
+                        <option [ngValue]="restaurant">{{restaurant.name}} ({{restaurant.address}})</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dishName" class="col-sm-4 col-form-label labelBold">Enter dish name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="dishName" [(ngModel)]="newDish.name" name="dishName" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dishPrice" class="col-sm-4 col-form-label labelBold">Enter dish price:</label>
+            <div class="col-sm-8">
+                <input type="number" min="0" step="0.1" class="form-control" id="dishPrice" [(ngModel)]="newDish.priceInEuros" name="dishPrice" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dishIngredients" class="col-sm-4 col-form-label labelBold">Enter ingredients:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="dishIngredients" [(ngModel)]="newDish.ingredients" name="dishIngredients" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dishImage" class="col-sm-4 col-form-label labelBold">Dish image:</label>
+            <div class="col-sm-8">
+                <input type="file" class="form-control" id="dishImage" accept=".jpg,.png" name="dishImage" (change)="dishImageProcess($event)">
+            </div>
+        </div>
+
+        <button class="add-dish" (click)="addDish()">Add Dish</button>
+        <span class="text-danger">{{dishMessage}}</span><br/>
+    </div>
+</body>
+</html>

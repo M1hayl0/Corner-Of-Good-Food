@@ -1,0 +1,15 @@
+footer {
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+  

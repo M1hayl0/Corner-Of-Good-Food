@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Waiting reservations for {{restaurant.name}} restaurant</h2>
+        <table>
+            <tr>
+                <th>Guest</th>
+                <th>Seats</th>
+                <th>Date</th>
+                <th>Requirements</th>
+                <th>Status</th>
+                <th>Reason for rejection</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let reservation of allWaitingReservationsForRestaurant">
+                <td class="pointer" (click)="displayCanvas(reservation)">{{reservation.guest}}</td>
+                <td>{{reservation.seats}}</td>
+                <td>{{reservation.date | date:'MM/dd/yyyy, h:mm a'}}</td>
+                <td>{{reservation.description}}</td>
+                <td>{{reservation.status}}</td>
+                <td>
+                    <div class="form-group col-md-6">
+                        <input style="width: 150px;"  type="text" class="form-control" id="reasonForRejection" [(ngModel)]="reservation.reasonForRejection" name="reasonForRejection" required>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn accept" (click)="accept(reservation)">Accept</button>
+                    <button class="btn reject" (click)="reject(reservation)">Reject</button>
+                </td>
+            </tr>
+        </table>
+        
+        <div *ngIf="displayList" class="listSelect">
+            <label>Choose the table</label>
+            <select id="table" name="table" [(ngModel)]="selectedReservation.table" class="custom-select select" (change)="changeTableSelected()">
+                <ng-container *ngFor="let table of notReservedTables">
+                    <option *ngIf="table.seats >= selectedReservation.seats" [ngValue]="table">{{table.seats}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <div class="card-body text-center">
+            <div class="canvas-container">
+                <canvas #canvas width="800" height="600"></canvas>
+            </div><br/>
+        </div>
+        <hr/>
+
+        <h2>Accepted and rejected reservations for {{restaurant.name}} restaurant</h2>
+        <table>
+            <tr>
+                <th>Guest</th>
+                <th>Seats</th>
+                <th>Date</th>
+                <th>Requirements</th>
+                <th>Status</th>
+                <th>Appeared</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let reservation of allAcceptedRejectedReservationsForRestaurantForWaiter">
+                <td>{{reservation.guest}}</td>
+                <td>{{reservation.seats}}</td>
+                <td>{{reservation.date | date:'MM/dd/yyyy, h:mm a'}}</td>
+                <td [width]="150">{{reservation.description}}</td>
+                <td>{{reservation.status}}</td>
+                <td *ngIf="reservation.guestAppeared === undefined"></td>
+                <td *ngIf="reservation.guestAppeared === true">Yes</td>
+                <td *ngIf="reservation.guestAppeared === false">No</td>
+                <td>
+                    <button [disabled]="!dateMoreThan30MinutesAgo(reservation.date) || reservation.guestAppeared !== undefined" class="btn accept" (click)="guestAppeared(reservation, true)">Guest appeared</button>
+                    <button [disabled]="!dateMoreThan30MinutesAgo(reservation.date) || reservation.guestAppeared !== undefined" class="btn reject" (click)="guestAppeared(reservation, false)">Guest didn't appear</button>
+                </td>
+                <td><button [disabled]="!dateMoreThan30MinutesAgoAndLessThan3Hours(reservation.date) || reservation.guestAppeared !== true || reservation.hours === 4" class="btn accept" (click)="addOneHour(reservation)">Add one hour</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

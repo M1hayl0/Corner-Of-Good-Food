@@ -1,0 +1,4 @@
+node_modules/
+.env
+.angular
+.DS_Store

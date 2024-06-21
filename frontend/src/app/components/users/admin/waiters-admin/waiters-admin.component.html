@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner of Good Food</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Waiters</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let waiter of allWaiters">
+                <td>{{waiter.username}}</td>
+                <td>
+                    <div class="form-group col-md-6">
+                        <input style="width: 100px;"  type="text" class="form-control" id="firstName" [(ngModel)]="waiter.firstName" name="firstName" required>
+                    </div>    
+                </td>
+                <td>
+                    <div class="form-group col-md-6">
+                        <input style="width: 100px;"  type="text" class="form-control" id="lastName" [(ngModel)]="waiter.lastName" name="lastName" required>
+                    </div>
+                </td>
+                <td>                    
+                    <div class="form-group col-md-6">
+                        <input style="width: 150px;"  type="text" class="form-control" id="address" [(ngModel)]="waiter.address" name="address" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group col-md-6">
+                        <input style="width: 150px;"  type="text" class="form-control" id="phone" [(ngModel)]="waiter.phone" name="phone" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group col-md-6">
+                        <input style="width: 150px;"  type="text" class="form-control" id="email" [(ngModel)]="waiter.email" name="email" required>
+                    </div>
+                </td>
+                <td>{{waiter.status}}</td>
+                <td class="btn-container">
+                    <button class="btn accept" (click)="update(waiter)">Update</button>
+                </td>
+                <td class="btn-container">
+                    <button [disabled]="waiter.status !== 'active'" class="btn refdeact" (click)="deactivate(waiter)">Deactivate</button>
+                </td>
+            </tr>
+        </table>
+        <hr/>
+
+        <h2>Add Waiter</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="waiter2.username" name="username" required>
+                    <span class="text-danger">{{usernameMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="waiter2.password" name="password" required>
+                    <span class="text-danger">{{passwordMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="securityQuestion">Security Question:</label>
+                    <input type="text" class="form-control" id="securityQuestion" [(ngModel)]="waiter2.securityQuestion" name="securityQuestion" required>
+                    <span class="text-danger">{{securityQuestionMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="securityAnswer">Security Answer:</label>
+                    <input type="text" class="form-control" id="securityAnswer" [(ngModel)]="waiter2.securityAnswer" name="securityAnswer" required>
+                    <span class="text-danger">{{securityAnswerMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName2">First Name:</label>
+                    <input type="text" class="form-control" id="firstName2" [(ngModel)]="waiter2.firstName" name="firstName2" required>
+                    <span class="text-danger">{{firstNameMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName2">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName2" [(ngModel)]="waiter2.lastName" name="lastName2" required>
+                    <span class="text-danger">{{lastNameMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="address2">Address:</label>
+                    <input type="text" class="form-control" id="address2" [(ngModel)]="waiter2.address" name="address2" required>
+                    <span class="text-danger">{{addressMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone2">Phone:</label>
+                    <input type="text" class="form-control" id="phone2" [(ngModel)]="waiter2.phone" name="phone2" required>
+                    <span class="text-danger">{{phoneMessage}}</span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email2">E-mail:</label>
+                    <input type="email" class="form-control" id="email2" [(ngModel)]="waiter2.email" name="email2" required>
+                    <span class="text-danger">{{emailMessage}}</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="creditCard">Credit Card Number:</label>
+                    <input type="text" class="form-control" id="creditCard" [(ngModel)]="waiter2.creditCard" name="creditCard" required>
+                    <span class="text-danger">{{creditCardMessage}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label><br/>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="pol" id="polM" [(ngModel)]="waiter2.gender" value="M" checked>
+                    <label class="form-check-label" for="polM">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="pol" id="polF" [(ngModel)]="waiter2.gender" value="F">
+                    <label class="form-check-label" for="polF">Female</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="profileImage" class="col-auto col-form-label">Profile Image:</label>
+                <div class="col-auto">
+                  <input type="file" class="form-control" id="profileImage" accept=".jpg,.png" name="profileImage" (change)="profileImageProcess($event)">
+                </div>
+                <span class="col-auto text-danger">{{profileImageMessage}}</span>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="registration()">Registration</button>
+        </form>
+        <hr/>
+
+        <h3>Add Waiter to Restaurant</h3>
+        <div class="form-group row">
+            <label for="waiterAdd" class="col-sm-2 col-form-label">Choose waiter:</label>
+            <div class="col-sm-8">
+              <select id="waiterAdd" name="waiterAdd" [(ngModel)]="waiterAdd" class="custom-select select fixed-size-select">
+                <ng-container *ngFor="let waiter of allWaiters">
+                  <option *ngIf="waiter.restaurantName === '' || waiter.restaurantAddress === ''" [ngValue]="waiter">{{waiter.username}}</option>
+                </ng-container>
+              </select>
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label for="restaurantAddWaiter" class="col-sm-2 col-form-label">Choose restaurant:</label>
+            <div class="col-sm-8">
+              <select id="restaurantAddWaiter" name="restaurantAddWaiter" [(ngModel)]="restaurantAddWaiter" class="custom-select select fixed-size-select">
+                <ng-container *ngFor="let restaurant of allRestaurants">
+                  <option [ngValue]="restaurant">{{restaurant.name}} ({{restaurant.address}})</option>
+                </ng-container>
+              </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="addWaiter()">Add waiter to restaurant</button>
+        
+    </div>
+</body>
+</html>
