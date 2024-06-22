@@ -62,8 +62,6 @@ export class HomePageComponent implements OnInit {
                     let now = new Date()
                     for(let reservation of this.allReservations) {
                       const differenceInDays = (now.getTime() - new Date(reservation.date).getTime()) / (1000 * 60 * 60 * 24)
-                      console.log(differenceInDays)
-                      console.log(new Date(reservation.date))
                       if(differenceInDays <= 1 && differenceInDays >= 0) this.last24Hours++
                       if(differenceInDays <= 7 && differenceInDays >= 0) this.last7Days++
                       if(differenceInDays <= 30 && differenceInDays >= 0) this.lastMonth++
